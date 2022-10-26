@@ -4,7 +4,7 @@ import AnimatedLetters from '../AnimatedLetters';
 import { useEffect, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Email from '../../assets/images/email.png';
-import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet'
+import { MapContainer, CircleMarker, TileLayer, Popup, Tooltip} from 'react-leaflet'
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
@@ -41,9 +41,7 @@ const Contact = () => {
                     idx={15}
                 />
                 </h1>
-                <p>
-                    Laboris voluptate adipisicing do veniam laborum. Ut veniam reprehenderit proident voluptate nostrud labore cupidatat tempor anim aliqua cupidatat incididunt sint. Eu enim occaecat culpa nostrud non. Do sint fugiat cillum ea nisi esse tempor in eu ullamco. In voluptate anim labore amet incididunt in ut. Fugiat consequat cillum deserunt occaecat enim magna occaecat laboris non ad. Deserunt non cillum consectetur est consectetur dolore laboris.
-                </p>
+                <p>Interested in getting in touch with me or working together? Fill out the form bellow with some info about yourself and your project and I will get back to you as soon as I can!</p>
                 <div className='contact-form'>
                     <form ref={refForm} onSubmit={sendEmail}>
                         <ul>
@@ -77,9 +75,11 @@ const Contact = () => {
         <div className="map-wrap">
             <MapContainer center={[40.764681072223205, -73.96254039945119]} zoom={13}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                <Marker position={[40.764681072223205, -73.96254039945119]}>
-                    <Popup> Nothing to see here</Popup>
-                </Marker>
+                <CircleMarker
+                    center={[40.766, -73.962]}
+                    pathOptions={{ color: '#115173' }}
+                    radius={50}>
+                </CircleMarker>
             </MapContainer>
         </div>
         <Loader type="pacman" />

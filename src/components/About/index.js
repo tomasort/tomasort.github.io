@@ -25,14 +25,10 @@ const About = () => {
                 <h1>
                     <AnimatedLetters letterClass={letterClass} strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']} idx={15}/>
                 </h1>
-                <p>
-                    Adipisicing est magna tempor do minim. Culpa esse laborum ex aliquip ut minim laborum. Commodo veniam anim nulla do consectetur. Ullamco et fugiat ea deserunt Lorem dolore Lorem qui mollit sint esse magna. Ipsum ullamco deserunt duis dolor fugiat nostrud proident id. In ad in pariatur eiusmod cillum deserunt magna.
+                <p>I am currently a graduate student at NYU pursuing a Masters's degree in Computer science with a strong foundation in programming, algorithms, and software development seeking a full-time software developer opportunity. Please contact me at tor213@nyu.edu or at 305-123-4567.
                 </p>
                 <p>
-                    Aliquip sint Lorem qui commodo duis eiusmod sint ad nostrud voluptate. Dolor elit aute ex sit eu laboris minim pariatur esse ea duis. Commodo amet minim ad id fugiat adipisicing dolor esse. Id aliquip exercitation consequat ipsum est nulla minim reprehenderit deserunt adipisicing anim. Tempor ea mollit quis dolor veniam cupidatat id.
-                </p>
-                <p>
-                    Et commodo exercitation enim fugiat culpa sint laboris ut anim elit aute ipsum nulla culpa. Irure minim qui amet velit ex. Velit sit consectetur non commodo Lorem. Ut adipisicing elit aliquip occaecat. Excepteur labore Lorem exercitation aliquip velit. Laboris dolore ut ipsum mollit cupidatat cillum voluptate aute.
+                I decided to study computer science because I've always been interested in finding out how stuff works. I believe computers have revolutionized the way we live our modern lives, and yet the average person does not know how these machines work. My goal as a computer science student is to understand and develop the power and versatility of computers. I'm interested in the interactions between human beings and computers, and how we can use artificial intelligence to perform difficult tasks that we previously thought were impossible. 
                 </p>
             </div>
 

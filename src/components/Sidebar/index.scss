@@ -35,7 +35,11 @@
         top: 50%;
         margin-top: -120px;
         width: 100%;
-
+        a.active{
+            svg{
+                color: #ffd700;
+            }
+        }
         a {
             font-size: 22px;
             color: #4d4d4e;
@@ -45,6 +49,7 @@
             position: relative; 
             text-decoration: none;
             svg{
+                vertical-align: middle;
                 height: 30px;
                 transition: all 0.3s ease-out;
             }
@@ -70,29 +75,23 @@
                 opacity: 0;
                 transition: all 0.3s ease-out;
             }
-            &:first-child {
-                &::after {
-                    content: 'HOME'
-                }
+        }
+        .home-link  {
+            &::after {
+                content: 'HOME';
             }
         }
-        a.about-link {
+        .about-link {
             &:after {
                 content: 'ABOUT';
             }
         }
-
-        a.contact-link {
+        .contact-link {
             &:after {
                 content: 'CONTACT';
             }
         }
 
-        a.active{
-            svg{
-                color: #ffd700;
-            }
-        }
     }
     ul {
         svg{
