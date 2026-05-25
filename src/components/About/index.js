@@ -4,10 +4,10 @@ import Loader from 'react-loaders';
 import { useEffect, useState } from 'react';
 import { ReactComponent as JavaScript } from '../../assets/fontawesome/svgs/brands/square-js.svg';
 import { ReactComponent as ReactJs } from '../../assets/fontawesome/svgs/brands/react.svg';
-import { ReactComponent as Java } from '../../assets/fontawesome/svgs/brands/java.svg';
+import { ReactComponent as Docker } from '../../assets/fontawesome/svgs/brands/docker.svg';
 import { ReactComponent as Python } from '../../assets/fontawesome/svgs/brands/python.svg';
-import { ReactComponent as Tensorflow } from '../../assets/fontawesome/svgs/brands/tensorflow.svg';
-import { ReactComponent as Cpp } from '../../assets/fontawesome/svgs/brands/cpp.svg';
+import { ReactComponent as NodeJs } from '../../assets/fontawesome/svgs/brands/node-js.svg';
+import { ReactComponent as GitHub } from '../../assets/fontawesome/svgs/brands/github.svg';
 
 const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
@@ -25,10 +25,14 @@ const About = () => {
                 <h1>
                     <AnimatedLetters letterClass={letterClass} strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']} idx={15}/>
                 </h1>
-                <p>I am currently a graduate student at NYU pursuing a Masters's degree in Computer science with a strong foundation in programming, algorithms, and software development seeking a full-time software developer opportunity. Please contact me at tor213@nyu.edu or at 305-123-4567.
+                <p>
+                    I'm a software engineer with a strong foundation in computer science and experience building Python backend and full-stack applications. My work spans web application development, database-backed systems, APIs, authentication, testing, deployment workflows, and data processing.
                 </p>
                 <p>
-                I decided to study computer science because I've always been interested in finding out how stuff works. I believe computers have revolutionized the way we live our modern lives, and yet the average person does not know how these machines work. My goal as a computer science student is to understand and develop the power and versatility of computers. I'm interested in the interactions between human beings and computers, and how we can use artificial intelligence to perform difficult tasks that we previously thought were impossible. 
+                    Currently focused on independent full-stack development for small-business and product-oriented applications, alongside projects in analytics, geospatial search, media systems, and applied machine learning. I'm targeting software engineering roles in backend development, full-stack product work, and Python-based systems.
+                </p>
+                <p>
+                    M.S. Computer Science — NYU (GPA 3.88) &nbsp;|&nbsp; B.S. Computer Science — FIU (GPA 3.84)
                 </p>
             </div>
 
@@ -41,16 +45,16 @@ const About = () => {
                     <ReactJs fill="currentColor" color="#EFD81D"/>
                 </div>
                 <div className='face3'>
-                    <Java fill="currentColor" color="#28A4D9"/>
+                    <Docker fill="currentColor" color="#28A4D9"/>
                 </div>
                 <div className='face4'>
                     <Python fill="currentColor" color="#5ED4F4"/>
                 </div>
                 <div className='face5'>
-                    <Cpp fill="currentColor" color="#EC48"/>
+                    <NodeJs fill="currentColor" color="#68A063"/>
                 </div>
                 <div className='face6'>
-                    <Tensorflow fill="currentColor" color="#f06529"/>
+                    <GitHub fill="currentColor" color="#f06529"/>
                 </div>
 
             

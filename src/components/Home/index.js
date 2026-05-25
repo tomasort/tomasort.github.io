@@ -10,7 +10,7 @@ import Logo from '../Logo';
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const nameArray = ['o', 'm', 'á', 's']
-    const jobArray = ['S', 'o', 'f', 't' ,'w', 'a', 'r', 'e', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r']
+    const jobArray = ['S', 'o', 'f', 't' ,'w', 'a', 'r', 'e', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r']
 
     useEffect( () => {
         setTimeout(() => {
@@ -31,7 +31,7 @@ const Home = () => {
                      <br/> 
                     <AnimatedLetters letterClass={letterClass} strArray={jobArray} idx={15}/>
                 </h1>
-                <h2>Full stack developer</h2>
+                <h2>Python Backend &amp; Full-Stack Development</h2>
                 <Link to='contact' className='flat-button'>CONTACT ME</Link>
                 <img className='profile-picture' src={ProfilePic} alt='profile'/>
             </div>
