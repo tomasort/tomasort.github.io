@@ -3,8 +3,7 @@ import Loader from 'react-loaders';
 import AnimatedLetters from '../AnimatedLetters';
 import { useEffect, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import Email from '../../assets/images/email.png';
-import { MapContainer, CircleMarker, TileLayer, Popup, Tooltip} from 'react-leaflet'
+import { MapContainer, CircleMarker, TileLayer} from 'react-leaflet'
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
@@ -41,7 +40,7 @@ const Contact = () => {
                     idx={15}
                 />
                 </h1>
-                <p>Interested in getting in touch with me or working together? Fill out the form bellow with some info about yourself and your project and I will get back to you as soon as I can!</p>
+                <p>Feel free to reach out about software engineering opportunities, collaborations, or just to say hello. Fill out the form and I'll get back to you as soon as I can.</p>
                 <div className='contact-form'>
                     <form ref={refForm} onSubmit={sendEmail}>
                         <ul>
@@ -68,9 +67,7 @@ const Contact = () => {
         <div className='info-map'>
             Tomás Ortega,
             <br />
-            New York
-            <br />
-            <img src={Email} alt="email" width='200px'/>
+            New York, NY
         </div>
         <div className="map-wrap">
             <MapContainer center={[40.764681072223205, -73.96254039945119]} zoom={13}>

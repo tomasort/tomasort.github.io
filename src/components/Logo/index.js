@@ -1,12 +1,6 @@
 import './index.scss';
-import { useEffect, useRef } from 'react';
-import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin';
-import gsap from 'gsap-trial';
 
 const Logo = () => {
-
-    const bgRef = useRef();
-    const outlineLogoRef = useRef();
 
     // useEffect( () => {
     //     gsap.registerPlugin(DrawSVGPlugin);
