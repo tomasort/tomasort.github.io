@@ -2,12 +2,12 @@ import AnimatedLetters from '../AnimatedLetters';
 import './index.scss';
 import Loader from 'react-loaders';
 import { useEffect, useState } from 'react';
-import { ReactComponent as JavaScript } from '../../assets/fontawesome/svgs/brands/square-js.svg';
-import { ReactComponent as ReactJs } from '../../assets/fontawesome/svgs/brands/react.svg';
-import { ReactComponent as Docker } from '../../assets/fontawesome/svgs/brands/docker.svg';
-import { ReactComponent as Python } from '../../assets/fontawesome/svgs/brands/python.svg';
-import { ReactComponent as NodeJs } from '../../assets/fontawesome/svgs/brands/node-js.svg';
-import { ReactComponent as GitHub } from '../../assets/fontawesome/svgs/brands/github.svg';
+import JavaScript from '../../assets/fontawesome/svgs/brands/square-js.svg?react';
+import ReactJs from '../../assets/fontawesome/svgs/brands/react.svg?react';
+import Docker from '../../assets/fontawesome/svgs/brands/docker.svg?react';
+import Python from '../../assets/fontawesome/svgs/brands/python.svg?react';
+import NodeJs from '../../assets/fontawesome/svgs/brands/node-js.svg?react';
+import GitHub from '../../assets/fontawesome/svgs/brands/github.svg?react';
 
 const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
@@ -39,22 +39,22 @@ const About = () => {
             <div className='stage-cube-cont'>
                 <div className="cubespinner">
                 <div className='face1'>
-                    <JavaScript fill="currentColor" color="#dd0031"/>
+                    <JavaScript color="#F0DB4F"/>
                 </div>
                 <div className='face2'>
-                    <ReactJs fill="currentColor" color="#EFD81D"/>
+                    <ReactJs color="#61DAFB"/>
                 </div>
                 <div className='face3'>
-                    <Docker fill="currentColor" color="#28A4D9"/>
+                    <Docker color="#2496ED"/>
                 </div>
                 <div className='face4'>
-                    <Python fill="currentColor" color="#5ED4F4"/>
+                    <Python color="#3776AB"/>
                 </div>
                 <div className='face5'>
-                    <NodeJs fill="currentColor" color="#68A063"/>
+                    <NodeJs color="#539E43"/>
                 </div>
                 <div className='face6'>
-                    <GitHub fill="currentColor" color="#f06529"/>
+                    <GitHub color="#ffffff"/>
                 </div>
 
             

@@ -3,7 +3,10 @@ import Loader from 'react-loaders';
 import AnimatedLetters from '../AnimatedLetters';
 import { useEffect, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { MapContainer, CircleMarker, TileLayer} from 'react-leaflet'
+import { MapContainer, CircleMarker, TileLayer} from 'react-leaflet';
+
+// Upper West Side, New York, NY
+const MAP_CENTER = [40.7647, -73.9625];
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
@@ -70,12 +73,12 @@ const Contact = () => {
             New York, NY
         </div>
         <div className="map-wrap">
-            <MapContainer center={[40.764681072223205, -73.96254039945119]} zoom={13}>
+            <MapContainer center={MAP_CENTER} zoom={13}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 <CircleMarker
-                    center={[40.766, -73.962]}
-                    pathOptions={{ color: '#115173' }}
-                    radius={50}>
+                    center={MAP_CENTER}
+                    pathOptions={{ color: '#ffd700' }}
+                    radius={20}>
                 </CircleMarker>
             </MapContainer>
         </div>
