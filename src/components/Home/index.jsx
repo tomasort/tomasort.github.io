@@ -1,43 +1,59 @@
 import './index.scss'; 
-import LogoTitle from '../../assets/images/logo-t.png';
-import Loader from 'react-loaders'
 import ProfilePic from '../../assets/images/website_home_picture.png';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import AnimatedLetters from '../AnimatedLetters';
-import Logo from '../Logo';
+
+const proofItems = [
+    {
+        label: 'Backend systems',
+        value: 'APIs, authentication, async jobs, and data workflows built for maintainability.',
+    },
+    {
+        label: 'Product delivery',
+        value: 'Full-stack execution with clear UX, solid architecture, and deployment-ready code.',
+    },
+]
 
 const Home = () => {
-    const [letterClass, setLetterClass] = useState('text-animate')
-    const nameArray = ['o', 'm', 'á', 's']
-    const jobArray = ['S', 'o', 'f', 't' ,'w', 'a', 'r', 'e', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r']
-
-    useEffect( () => {
-        setTimeout(() => {
-            setLetterClass('text-animate-hover')
-        }, 4000)
-    }, [])
-
     return (
         <>
         <div className='container home-page'>
             <div className='text-zone'>
-                <h1>
-                    <AnimatedLetters letterClass={letterClass} strArray={['H', 'i']} idx={10}/>
-                    <br/>
-                    <AnimatedLetters letterClass={letterClass} strArray={['I', "'m"]} idx={12}/>
-                    <img src={LogoTitle} alt='developer'/> 
-                    <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={15}/>
-                     <br/> 
-                    <AnimatedLetters letterClass={letterClass} strArray={jobArray} idx={15}/>
-                </h1>
-                <h2>Python Backend &amp; Full-Stack Development</h2>
-                <Link to='contact' className='flat-button'>CONTACT ME</Link>
-                <img className='profile-picture' src={ProfilePic} alt='profile'/>
+                <p className='section-kicker'>Software Engineer</p>
+                <h1 className='hero-name'>Tomás Ortega</h1>
+                <h2>Backend-first engineer building reliable Python systems and polished full-stack products.</h2>
+                <p className='hero-summary'>
+                    I build maintainable software across APIs, databases, async processing, analytics workflows, and customer-facing interfaces with an emphasis on clarity, performance, and shipping useful products.
+                </p>
+                <div className='hero-actions'>
+                    <Link to='projects' className='flat-button'>VIEW PROJECTS</Link>
+                    <Link to='contact' className='secondary-button'>LET&apos;S TALK</Link>
+                </div>
+                <div className='hero-highlights'>
+                    <span>Python backend</span>
+                    <span>Full-stack product work</span>
+                    <span>PostgreSQL, Docker, and APIs</span>
+                </div>
+                <div className='hero-proof-grid'>
+                    {proofItems.map((item) => (
+                        <article className='proof-card' key={item.label}>
+                            <span>{item.label}</span>
+                            <strong>{item.value}</strong>
+                        </article>
+                    ))}
+                </div>
             </div>
-            <Logo />
+            <div className='hero-visual'>
+                <div className='profile-card'>
+                    <div className='profile-media'>
+                        <img className='profile-picture' src={ProfilePic} alt='Tomás Ortega portrait'/>
+                    </div>
+                    <div className='profile-copy'>
+                        <strong>Based in New York</strong>
+                        <span>Open to backend, platform, and full-stack engineering roles.</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <Loader type="pacman"/>
         </>
     )
 }

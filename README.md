@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# tomasort.github.io
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio website built with React + Vite, deployed to GitHub Pages.
+
+## Tech Stack
+
+- **React 19** with React Router v6
+- **Vite** (build tool, replacing Create React App)
+- **SCSS** for styles
+- **EmailJS** for the contact form
+- **Leaflet / react-leaflet** for the interactive map
+- **react-loaders** for page loader animations
+- **gh-pages** for deployment
+
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install --legacy-peer-deps
+```
+
+> `--legacy-peer-deps` is required because `react-loaders` has outdated peer dependency declarations.
+
+### 2. Set up environment variables
+
+Create a `.env.local` file in the project root (it is already gitignored):
+
+```
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+These values come from your [EmailJS](https://www.emailjs.com/) dashboard.
+
+### 3. Run the dev server
+
+```bash
+npm start
+```
+
+Opens at [http://localhost:5173](http://localhost:5173). The page hot-reloads on changes.
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Description |
+|---|---|
+| `npm start` | Start the Vite dev server |
+| `npm run build` | Build for production into `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run deploy` | Build and push to GitHub Pages |
 
-### `npm start`
+## Deployment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+See the [Deployment](#deploying-to-github-pages) section below.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+  assets/          # Images, fonts, SVG icons
+  components/
+    About/         # About me page with rotating 3D cube
+    AnimatedLetters/
+    Contact/       # Contact form + Leaflet map
+    Home/          # Landing page
+    Layout/        # App shell with sidebar
+    Logo/          # Animated SVG logo
+    Projects/      # Projects page
+    Sidebar/       # Navigation sidebar
+  App.jsx          # Route definitions
+  index.jsx        # Entry point
+index.html         # Vite HTML entry (project root)
+vite.config.js     # Vite config
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deploying to GitHub Pages
 
-### `npm run build`
+The site deploys to `https://tomasort.github.io` via the `gh-pages` npm package.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### One-time setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Make sure the `homepage` field in `package.json` is set to your GitHub Pages URL:
+   ```json
+   "homepage": "https://tomasort.github.io"
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. In your GitHub repository settings, go to **Settings → Pages** and set the source branch to `gh-pages`.
 
-### `npm run eject`
+### Deploying
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm run deploy
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This runs `vite build` first (via the `predeploy` hook), then pushes the `dist/` folder to the `gh-pages` branch. GitHub Pages serves that branch automatically.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> **Note:** `.env.local` is never included in the build output. Your EmailJS credentials stay local. The built JS bundle will contain the resolved values of `import.meta.env.VITE_*` — so treat them as client-side keys (EmailJS keys are designed to be used this way).

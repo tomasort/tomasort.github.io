@@ -1,87 +1,111 @@
 .projects-page {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
     .text-zone {
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        width: 80%;
+        position: relative;
+        width: 100%;
+        max-width: 82rem;
 
         h1 {
-            font-size: 53px;
-            font-family: 'Coolvetica';
-            color: #ffd700;
-            font-weight: 400;
             margin-top: 0;
-            margin-bottom: 20px;
-            position: relative;
+            margin-bottom: 1.6rem;
         }
     }
 
     .projects-list {
-        position: absolute;
-        top: 20%;
-        left: 10%;
-        width: 80%;
-        max-height: 72%;
-        overflow-y: auto;
-        padding-right: 10px;
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 2.2rem;
         animation: fadeIn 1s 1s backwards;
-
-        &::-webkit-scrollbar {
-            width: 6px;
-        }
-        &::-webkit-scrollbar-track {
-            background: #1d1d1d;
-        }
-        &::-webkit-scrollbar-thumb {
-            background: #ffd700;
-            border-radius: 3px;
-        }
     }
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    border-radius: 6px;
-    padding: 24px 28px;
-    margin-bottom: 20px;
-    transition: border-color 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2.4rem;
+    padding: 2.8rem;
+    margin-bottom: 0;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 
     &:hover {
-        border-color: #ffd700;
+        border-color: rgba(255, 213, 74, 0.38);
+        transform: translateY(-4px);
+        box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .project-category {
+        margin: 0 0 1rem;
+        font-size: 1.15rem;
+        letter-spacing: 0.16rem;
+        text-transform: uppercase;
+        color: rgba(247, 251, 253, 0.56);
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 2.6rem;
         font-family: 'Coolvetica';
-        color: #ffd700;
+        color: var(--text-primary);
         font-weight: 400;
-        margin: 0 0 10px 0;
+        margin: 0 0 1.2rem 0;
     }
 
     p {
-        font-size: 14px;
-        color: #ccc;
+        font-size: 1.6rem;
+        color: var(--text-soft);
         font-family: sans-serif;
-        font-weight: 300;
-        line-height: 1.6;
-        margin: 0 0 14px 0;
+        font-weight: 400;
+        line-height: 1.7;
+        margin: 0 0 1.8rem 0;
+    }
+}
+
+.project-points {
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+
+    li {
+        position: relative;
+        padding-left: 1.8rem;
+        font-size: 1.48rem;
+        line-height: 1.65;
+        color: rgba(242, 247, 250, 0.88);
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 0.7rem;
+            height: 0.7rem;
+            border-radius: 999px;
+            background: rgba(255, 213, 74, 0.78);
+        }
     }
 }
 
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 0.8rem;
 }
 
 .tech-tag {
-    background: rgba(255, 215, 0, 0.1);
-    color: #ffd700;
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    border-radius: 3px;
-    padding: 3px 10px;
-    font-size: 11px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #f4f9fb;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    padding: 0.65rem 1.1rem;
+    font-size: 1.12rem;
     font-family: sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
 }

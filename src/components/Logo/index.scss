@@ -1,20 +1,17 @@
 .logo-container {
-    z-index: -1;
-    width: 600px;
-    height: 1000px;
+  z-index: 0;
+  width: min(52rem, 90%);
+  height: auto;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: auto;
-    margin: auto;
-    // opacity: 0;
+  inset: auto -8rem -5rem auto;
+  margin: 0;
+  opacity: 0.18;
+  pointer-events: none;
 
     svg {
         width: 100%;
         height: auto; 
-        bottom: 0;
-        // transform: rotateZ(30deg) !important
+    bottom: 0;
     }
 }
 
@@ -34,3 +31,10 @@
       stroke-dashoffset: 100;
     }
   }
+
+@media screen and (max-width: 900px) {
+    .logo-container {
+        inset: auto -4rem -3rem auto;
+        width: 32rem;
+    }
+}

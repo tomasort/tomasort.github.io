@@ -1,7 +1,4 @@
-import AnimatedLetters from '../AnimatedLetters';
 import './index.scss';
-import Loader from 'react-loaders';
-import { useEffect, useState } from 'react';
 import JavaScript from '../../assets/fontawesome/svgs/brands/square-js.svg?react';
 import ReactJs from '../../assets/fontawesome/svgs/brands/react.svg?react';
 import Docker from '../../assets/fontawesome/svgs/brands/docker.svg?react';
@@ -9,60 +6,65 @@ import Python from '../../assets/fontawesome/svgs/brands/python.svg?react';
 import NodeJs from '../../assets/fontawesome/svgs/brands/node-js.svg?react';
 import GitHub from '../../assets/fontawesome/svgs/brands/github.svg?react';
 
+const skills = [
+    { label: 'JavaScript', icon: JavaScript, color: '#F0DB4F' },
+    { label: 'React', icon: ReactJs, color: '#61DAFB' },
+    { label: 'Docker', icon: Docker, color: '#2496ED' },
+    { label: 'Python', icon: Python, color: '#3776AB' },
+    { label: 'Node.js', icon: NodeJs, color: '#539E43' },
+    { label: 'GitHub', icon: GitHub, color: '#ffffff' },
+]
+
+const profileFacts = [
+    { label: 'Focus', value: 'Backend systems, product engineering, and Python-first development.' },
+    { label: 'Education', value: 'M.S. Computer Science, NYU. B.S. Computer Science, FIU.' },
+    { label: 'Location', value: 'Based in New York and open to strong engineering teams.' },
+]
+
 const About = () => {
-    const [letterClass, setLetterClass] = useState('text-animate')
-
-    useEffect( () => {
-        setTimeout(() => {
-            setLetterClass('text-animate-hover')
-        }, 3000)
-    }, [])
-
     return (
         <>
         <div className='container about-page'>
             <div className='text-zone'>
-                <h1>
-                    <AnimatedLetters letterClass={letterClass} strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']} idx={15}/>
-                </h1>
-                <p>
-                    I'm a software engineer with a strong foundation in computer science and experience building Python backend and full-stack applications. My work spans web application development, database-backed systems, APIs, authentication, testing, deployment workflows, and data processing.
-                </p>
-                <p>
-                    Currently focused on independent full-stack development for small-business and product-oriented applications, alongside projects in analytics, geospatial search, media systems, and applied machine learning. I'm targeting software engineering roles in backend development, full-stack product work, and Python-based systems.
-                </p>
-                <p>
-                    M.S. Computer Science — NYU (GPA 3.88) &nbsp;|&nbsp; B.S. Computer Science — FIU (GPA 3.84)
-                </p>
+                <p className='section-kicker'>About</p>
+                <h1>Technical depth with product judgment.</h1>
+                <p className='section-lead'>I do my best work on teams that care about reliability, clarity, and building software that people actually want to use.</p>
+                <div className='about-copy'>
+                    <p>
+                        I&apos;m a software engineer with a strong computer science foundation and experience across backend services, full-stack applications, APIs, authentication, testing, deployment workflows, and data-heavy systems.
+                    </p>
+                    <p>
+                        My background combines academic rigor with practical product work. I&apos;m particularly interested in backend and platform roles where architecture, clean execution, and thoughtful collaboration matter.
+                    </p>
+                </div>
+                <div className='about-facts'>
+                    {profileFacts.map((fact) => (
+                        <article className='fact-card' key={fact.label}>
+                            <span>{fact.label}</span>
+                            <strong>{fact.value}</strong>
+                        </article>
+                    ))}
+                </div>
             </div>
 
-            <div className='stage-cube-cont'>
-                <div className="cubespinner">
-                <div className='face1'>
-                    <JavaScript color="#F0DB4F"/>
+            <div className='skills-panel' aria-label='Core technologies'>
+                <div className='skills-header'>
+                    <p className='skills-kicker'>Core stack</p>
+                    <h2>Tools I use to design, build, and ship.</h2>
                 </div>
-                <div className='face2'>
-                    <ReactJs color="#61DAFB"/>
-                </div>
-                <div className='face3'>
-                    <Docker color="#2496ED"/>
-                </div>
-                <div className='face4'>
-                    <Python color="#3776AB"/>
-                </div>
-                <div className='face5'>
-                    <NodeJs color="#539E43"/>
-                </div>
-                <div className='face6'>
-                    <GitHub color="#ffffff"/>
-                </div>
-
-            
+                <p className='skills-intro'>A practical set of technologies I rely on for backend-heavy product development.</p>
+                <div className='skills-grid'>
+                    {skills.map(({ label, icon: Icon, color }) => (
+                        <div className='skill-card' key={label}>
+                            <span className='skill-icon' style={{ color }}>
+                                <Icon />
+                            </span>
+                            <span className='skill-label'>{label}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
-
-        <Loader type="pacman" />
         </>
     )
 }
